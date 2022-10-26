@@ -2,8 +2,6 @@ public class Person {
     private String name;
     private String eMail;
 
-    private Person personArr[];
-
 
     public Person(){}
 
@@ -37,16 +35,7 @@ public class Person {
                 '}';
     }
 
-    void nameAndEmailInput(int a){
-        for (int i = 0, j = 1; i < arr.length; i++, j++) {
 
-            arr[i] = new Person();
-            System.out.println("Give the " + j + " name on card:");
-            arr[i].setName(myObj.nextLine());
-            System.out.println("Give the email of the person number " + j);
-            arr[i].seteMail(myObj.nextLine());
-        }
-    }
 
 
 }
