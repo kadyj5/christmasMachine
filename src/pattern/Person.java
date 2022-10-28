@@ -4,7 +4,7 @@ public class Person {
     private String name;
 
     public Person(){}
-    public Person(String name, String eMail) {
+    public Person(String name) {
         this.name = name;
     }
 
