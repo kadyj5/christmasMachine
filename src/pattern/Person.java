@@ -28,13 +28,10 @@ public class Person {
 
     @Override
     public String toString() {
-        return "pattern.Person{" +
-                "name='" + name + '\'' +
-                ", eMail='" + eMail + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("Person{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", eMail='").append(eMail).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
-
-
-
-
 }
