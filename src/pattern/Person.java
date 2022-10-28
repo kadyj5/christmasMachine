@@ -1,3 +1,5 @@
+package pattern;
+
 public class Person {
     private String name;
     private String eMail;
@@ -26,7 +28,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "pattern.Person{" +
                 "name='" + name + '\'' +
                 ", eMail='" + eMail + '\'' +
                 '}';
