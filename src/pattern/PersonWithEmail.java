@@ -1,14 +1,18 @@
 package pattern;
 
+import java.util.Scanner;
+
 public class PersonWithEmail extends Person {
 
     private String email;
-    private PersonWithEmail personWithEmail[];
+    private int number;
     public PersonWithEmail() {}
 
-    public PersonWithEmail(String name, String email) {
+    public PersonWithEmail(String name, String email, int number) {
         super(name);
+        this.number = number;
         this.email = email;
+
     }
 
     public String getEmail() {
@@ -18,7 +22,6 @@ public class PersonWithEmail extends Person {
     public void setEmail(String email) {
         this.email = email;
     }
-
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("PersonWithEmail{");
@@ -27,12 +30,16 @@ public class PersonWithEmail extends Person {
         sb.append('}');
         return sb.toString();
     }
+    public PersonWithEmail addCards() {
+        Scanner sc = new Scanner(System.in);
+        PersonWithEmail personWithEmail = new PersonWithEmail();
+        personWithEmail = new PersonWithEmail();
+        System.out.println("Give the name on card:");
+        personWithEmail.setName(sc.nextLine());
+        System.out.println("Give the email of the person number ");
+        personWithEmail.setEmail(sc.nextLine());
 
-
-
-
-
-
-
+        return personWithEmail;
+    }
 }
 

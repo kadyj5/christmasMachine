@@ -1,5 +1,7 @@
+import pattern.Person;
 import pattern.PersonWithEmail;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,26 +18,22 @@ public class Main {
             System.out.println("Given argument is not a number!");
             return;
         }
-        PersonWithEmail[] arr = new PersonWithEmail[number];  // array of persons to be created.
 
-        myObj.nextLine();                   // clean the input stream.
-
-        //setting the names and emails:
-        for (int i = 0, j = 1; i < arr.length; i++, j++) {
-            arr[i] = new PersonWithEmail();
-            System.out.println("Give the " + j + " name on card:");
-            arr[i].setName(myObj.nextLine());
-            System.out.println("Give the email of the person number " + j);
-            arr[i].setEmail(myObj.nextLine());
+        Person[] arr = new Person[number];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i].addCards();
         }
-
         // printing the array:
         System.out.println("Cards to be created: ");
         for (int i = 0, j = 1; i < arr.length; i++, j++) {
             System.out.println(j + ". " + arr[i].toString());
         }
 
-
+        try {
+            arr[0].sendCards(arr);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
