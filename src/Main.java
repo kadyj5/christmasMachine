@@ -1,18 +1,22 @@
 import pattern.Person;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Christmas Machine");
-        System.out.println("Give the number of cards: ");
+        System.out.println("***Christmas Machine***\n");
+        System.out.print("Give the number of cards: ");
         int number = 0;
         try {
             number = myObj.nextInt();
-        } catch (IllegalArgumentException e) {
+        } catch (InputMismatchException e) {
+            System.out.println(e);
             System.out.println("Given argument is not a number!");
+            return;
         }
-        Person[] arr = new Person[number];  // tablica stworzonych osób.
+        Person[] arr = new Person[number];  // array of persons to be created.
         myObj.nextLine();                   // clean the input stream.
 
         //setting the names and emails:
