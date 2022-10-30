@@ -1,6 +1,5 @@
 package pattern;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
@@ -37,22 +36,11 @@ public class Person {
     }
 
     public static void sendCards(Person[] arr) throws IOException {
-        List<Integer> numbers = new ArrayList<>();
+        // List of numbers to be shuffled
+        List<Integer> numbers = DrawingCards.listOfNumbers(arr);
+        FilesMethods.newDirectory();
         for (int i = 0; i < arr.length; i++) {
-            numbers.add(i);
-        }
-
-
-        Collections.shuffle(numbers);
-        for (int i = 0; i < arr.length; i++) {
-//            FileWriter file = new FileWriter(new StringBuilder().append("C:\\Users\\Karolina\\Desktop\\").append(arr[i].getName()).append(".txt").toString());
-            while(arr[i].getName() == arr[numbers.get(0)].getName()){
-                Collections.shuffle(numbers);
-            }
-//            System.out.println(numbers);
-            System.out.println(arr[i].name + " --->" + arr[numbers.get(0)].getName());
-//            file.write(arr[numbers.get(i)].getName());
-//            file.close();
+            FilesMethods.newFile(arr,i, numbers);
             numbers.remove(0);
         }
     }
