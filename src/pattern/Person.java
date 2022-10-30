@@ -21,10 +21,8 @@ public class Person {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Person{");
-        sb.append("name='").append(name).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "Person{" + "name='" + name + '\'' +
+                '}';
     }
 
     public static Person addCards(){

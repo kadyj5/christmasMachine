@@ -10,7 +10,7 @@ public class FilesMethods {
 
     private static String getPathToDirectory(){
         System.out.println("Working Directory = " + System.getProperty("user.home"));
-        return new StringBuilder().append(System.getProperty("user.home")).append("\\Desktop\\cardsForChristmas").toString();
+        return System.getProperty("user.home") + "\\Desktop\\cardsForChristmas";
     }
 
     // new directory on desktop
@@ -26,7 +26,7 @@ public class FilesMethods {
     }
     // new file:
     public static void newFile(Person[] arr, int i, List <Integer> list) throws IOException {
-        FileWriter file = new FileWriter(new StringBuilder(FilesMethods.getPathToDirectory()).append("\\").append(arr[i].getName()).append(".txt").toString());
+        FileWriter file = new FileWriter(FilesMethods.getPathToDirectory() + "\\" + arr[i].getName() + ".txt");
         while(arr[i].getName().equals(arr[list.get(0)].getName())){
             Collections.shuffle(list);
         }
