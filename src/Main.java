@@ -1,5 +1,4 @@
 import pattern.Person;
-import pattern.PersonWithEmail;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -10,11 +9,11 @@ public class Main {
         Scanner myObj = new Scanner(System.in);
         System.out.println("***Christmas Machine***\n");
         System.out.print("Give the number of cards: ");
-        int number = 0;
+        int number;
         try {
             number = myObj.nextInt();
         } catch (InputMismatchException e) {
-            System.out.println(e);
+            e.printStackTrace();
             System.out.println("Given argument is not a number!");
             return;
         }
