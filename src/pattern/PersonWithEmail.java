@@ -30,7 +30,7 @@ public class PersonWithEmail extends Person {
         sb.append('}');
         return sb.toString();
     }
-    public PersonWithEmail addCards() {
+    public static PersonWithEmail addCards() {
         Scanner sc = new Scanner(System.in);
         PersonWithEmail personWithEmail = new PersonWithEmail();
         personWithEmail = new PersonWithEmail();

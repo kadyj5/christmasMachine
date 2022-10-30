@@ -18,10 +18,12 @@ public class Main {
             System.out.println("Given argument is not a number!");
             return;
         }
-
         Person[] arr = new Person[number];
+        myObj.nextLine();
+
         for (int i = 0; i < arr.length; i++) {
-            arr[i].addCards();
+            arr[i] = new Person();
+            arr[i] = Person.addCards();
         }
         // printing the array:
         System.out.println("Cards to be created: ");
@@ -30,7 +32,8 @@ public class Main {
         }
 
         try {
-            arr[0].sendCards(arr);
+            Person.sendCards(arr);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

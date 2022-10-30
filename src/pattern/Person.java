@@ -28,7 +28,7 @@ public class Person {
         return sb.toString();
     }
 
-    public Person addCards(){
+    public static Person addCards(){
         Scanner sc = new Scanner(System.in);
         Person person = new Person();
         System.out.println("Give the name on a card:");
@@ -36,20 +36,24 @@ public class Person {
         return person;
     }
 
-    public void sendCards(Person[] arr) throws IOException {
+    public static void sendCards(Person[] arr) throws IOException {
         List<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             numbers.add(i);
         }
+
+
         Collections.shuffle(numbers);
         for (int i = 0; i < arr.length; i++) {
-            FileWriter file = new FileWriter(arr[i].getName()+".txt");
-            while(arr[i].getName() == arr[numbers.get(i)].getName()){
+//            FileWriter file = new FileWriter(new StringBuilder().append("C:\\Users\\Karolina\\Desktop\\").append(arr[i].getName()).append(".txt").toString());
+            while(arr[i].getName() == arr[numbers.get(0)].getName()){
                 Collections.shuffle(numbers);
             }
-            file.write(arr[numbers.get(i)].getName());
-            file.close();
-            numbers.remove(i);
+//            System.out.println(numbers);
+            System.out.println(arr[i].name + " --->" + arr[numbers.get(0)].getName());
+//            file.write(arr[numbers.get(i)].getName());
+//            file.close();
+            numbers.remove(0);
         }
     }
 
